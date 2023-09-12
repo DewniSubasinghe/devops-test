@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Checkout') {
             steps {
@@ -8,14 +7,12 @@ pipeline {
                 checkout scm
             }
         }
-
         stage('Build') {
             steps {
                 // Use the 'bat' step to run Maven build commands on Windows
                 bat 'mvn clean install'
             }
         }
-
         stage('Docker Build') {
             steps {
                 // Build a Docker image from your project (assumes Docker is installed)
@@ -31,7 +28,6 @@ pipeline {
             }
         }
     }
-
     post {
         success {
             // This block executes if the pipeline is successful
