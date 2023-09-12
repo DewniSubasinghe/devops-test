@@ -19,7 +19,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 // Build a Docker image from your project (assumes Docker is installed)
-                bat 'docker build -t your-image-name .'
+                bat 'docker build -t dewni-assignment1 .'
             }
         }
 
