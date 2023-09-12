@@ -27,7 +27,7 @@ pipeline {
             steps {
                 // Deploy the Docker image to Minikube (assumes Minikube is running)
                 bat 'minikube docker-env | Invoke-Expression'
-                bat 'kubectl apply -f your-deployment.yaml'
+                bat 'kubectl apply -f deployment.yaml'
             }
         }
     }
