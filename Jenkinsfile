@@ -26,7 +26,7 @@ pipeline {
         stage('Minikube Deployment') {
             steps {
                 // Deploy the Docker image to Minikube (assumes Minikube is running)
-                bat 'minikube docker-env --shell cmd | % { cmd /c "$($_.trim())" }'
+                bat 'for /f %i in (\'minikube docker-env --shell cmd\') do %i'
                 bat 'kubectl apply -f deployment.yaml'
             }
         }
