@@ -29,7 +29,7 @@ pipeline {
                 // Deploy the Docker image to Minikube (assumes Minikube is running)
                 echo 'next'
                 bat 'kubectl config use-context minikube'
-                bat 'for /f %i in (\'minikube docker-env --shell cmd\') do %i'
+                bat 'for /f %%i in ('minikube docker-env --shell cmd') do %%i'
                 bat 'kubectl apply -f deployment.yaml'
                 echo 'next2'
             }
