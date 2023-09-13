@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: docker-k8s-demo-deployment
+  name: devops-test-deployment
   labels:
-    app: docker-k8s-demo
+    app: devops-test-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: docker-k8s-demo
+      app: devops-test-deployment
   template:
     metadata:
       labels:
-        app: docker-k8s-demo
+        app: devops-test-deployment
     spec:
       containers:
-        - name: docker-k8s-demo
+        - name: devops-test-deployment
           image: dewnisubasinghe/dewni-assignment1
           ports:
             - containerPort: 8080
